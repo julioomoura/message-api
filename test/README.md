@@ -21,5 +21,8 @@
   - [ ] Use docker compose to provide a redis-server
   - [ ] Find a alternative to redis cache
   - [ ] Cache resilience
+- [ ] Improve Logging
+  - [ ] Remove Fastity default logger
+  - [ ] Use Logger library
 - [ ] UI
   - [ ] Write a UI using templates
