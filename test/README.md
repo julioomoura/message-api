@@ -1,0 +1,23 @@
+## Tasks
+
+- [ ] Use Node features
+  - [x] --watch
+    - [ ] add script to package.json
+  - [ ] test runner
+    - [ ] --watch
+    - [x] add script to package.json
+    - [ ] coverage report
+- [x] Use fastify as server
+- [ ] Move functions to classes
+- [ ] Find a API that provides random messages
+- [x] Axios
+  - [ ] Use axios to fetch messages
+  - [ ] Test Random Message class
+- [ ] Prettier
+  - [ ] Use prettier at test files
+- [ ] GitHub Actions
+- [ ] Cache
+  - [ ] Use docker compose to provide a redis-server
+  - [ ] Find a alternative to redis cache
+- [ ] UI
+  - [ ] Write a UI using templates
