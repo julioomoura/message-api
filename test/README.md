@@ -6,7 +6,7 @@
   - [ ] test runner
     - [ ] --watch
     - [x] add script to package.json
-    - [ ] coverage report
+    - [x] coverage report
 - [x] Use fastify as server
 - [ ] Move functions to classes
 - [ ] Find a API that provides random messages

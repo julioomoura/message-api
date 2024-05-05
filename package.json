@@ -13,6 +13,7 @@
     "start": "node src/server.js",
     "start:watch": "node --watch-path=./src --watch src/server.js",
     "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage",
     "test:watch": "node --test --watch"
   },
   "keywords": [],
