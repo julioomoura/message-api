@@ -1,14 +1,14 @@
-GET http://localhost:3000/messages
+GET http://localhost:3000/
 
 ###
-GET http://localhost:3000/
+GET http://localhost:3000/messages
 
 ###
 POST http://localhost:3000/messages
 Content-Type: application/json
 
 {
-    "message": "This is the request body"
+    "message": "Cache this message"
 }
 
 ###
