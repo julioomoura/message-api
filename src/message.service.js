@@ -8,12 +8,10 @@ export default class MessageService {
   }
 
   async getMessage() {
-    const cachedMessage = await this.#cacheClient.GET("message");
-    if (cachedMessage) {
-      return cachedMessage;
-    }
-    const apiMessage = await this.#randomCommitApi.getRandomCommitMessage();
-    return apiMessage;
+    return (
+      (await this.#cacheClient.GET("message")) ??
+      (await this.#randomCommitApi.getRandomCommitMessage())
+    );
   }
 
   async cacheMessage(message) {
