@@ -1,11 +1,11 @@
 {
-  "name": "teste",
+  "name": "messageapi",
   "version": "1.0.0",
   "type": "module",
   "engines": {
     "node": "^22"
   },
-  "description": "",
+  "description": "NodeJS APP that provides a message endpoint",
   "main": "index.js",
   "scripts": {
     "format": "prettier --write \"src/**/*.js\"",
