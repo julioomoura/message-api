@@ -2,7 +2,7 @@
 
 - [ ] Use Node features
   - [x] --watch
-    - [ ] add script to package.json
+    - [x] add script to package.json
   - [ ] test runner
     - [ ] --watch
     - [x] add script to package.json
@@ -10,6 +10,7 @@
 - [x] Use fastify as server
 - [ ] Move functions to classes
 - [ ] Find a API that provides random messages
+  - [Random Commit API](https://whatthecommit.com/index.txt)
 - [x] Axios
   - [ ] Use axios to fetch messages
   - [ ] Test Random Message class
@@ -19,5 +20,6 @@
 - [ ] Cache
   - [ ] Use docker compose to provide a redis-server
   - [ ] Find a alternative to redis cache
+  - [ ] Cache resilience
 - [ ] UI
   - [ ] Write a UI using templates
