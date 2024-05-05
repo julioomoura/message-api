@@ -18,11 +18,9 @@
   - [ ] Use prettier at test files
 - [ ] GitHub Actions
 - [ ] Cache
-  - [ ] Use docker compose to provide a redis-server
+  - [x] Use docker compose to provide a redis-server
   - [ ] Find a alternative to redis cache
   - [ ] Cache resilience
-- [ ] Improve Logging
-  - [ ] Remove Fastity default logger
-  - [ ] Use Logger library
+- [ ] Dockerize
 - [ ] UI
   - [ ] Write a UI using templates
