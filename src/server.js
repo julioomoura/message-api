@@ -1,13 +1,15 @@
 import Fastify from "fastify";
 import { createRedisClient } from './redis.js'
-import { MessageService } from "./message.service.js";
+import MessageService from "./message.service.js";
+import RandomCommitAPI from "./random-commit.api.js";
 
 const fastify = Fastify({
   logger: true,
 });
 
-const redisClient = createRedisClient();
-const messageService = new MessageService({ redisClient })
+const redisClient = await createRedisClient();
+const randomCommitApi = new RandomCommitAPI()
+const messageService = new MessageService({ redisClient, randomCommitApi })
 
 fastify.get("/", async function handler(_req, _reply) {
   return { hello: "world" };

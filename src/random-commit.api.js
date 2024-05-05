@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default class RandomCommitAPi {
+export default class RandomCommitAPI {
   async getRandomCommitMessage() {
     return await axios
       .get("https://whatthecommit.com/index.txt", {
