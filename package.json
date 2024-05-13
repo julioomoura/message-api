@@ -10,8 +10,8 @@
   "scripts": {
     "format": "prettier --write \"src/**/*.js\"",
     "lint": "eslint",
-    "start": "node src/server.js",
-    "start:watch": "node --watch-path=./src --watch src/server.js",
+    "start": "node --env-file=.env src/server.js",
+    "start:watch": "node --env-file=.env --watch-path=./src --watch src/server.js",
     "test": "node --test",
     "test:coverage": "node --test --experimental-test-coverage",
     "test:watch": "node --test --watch"

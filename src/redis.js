@@ -12,7 +12,10 @@ export class CacheClient {
 }
 
 export async function createRedisClient() {
-  return await createClient()
+  return await createClient({
+    url: `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`,
+  })
+    .on("connect", () => console.log("Redis Client Connected"))
     .on("error", (err) => console.log("Redis Client Error", err))
     .connect();
 }
