@@ -11,6 +11,7 @@
 - [ ] Move functions to classes
 - [ ] Find a API that provides random messages
   - [Random Commit API](https://whatthecommit.com/index.txt)
+  - [Random Dad Jokes](https://icanhazdadjoke.com/)
 - [x] Axios
   - [ ] Use axios to fetch messages
   - [ ] Test Random Message class
