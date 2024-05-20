@@ -10,7 +10,6 @@ export default class RandomDadJokesAPI {
         },
       })
       .then((response) => {
-        console.log(response.data);
         return response.data.joke;
       });
   }

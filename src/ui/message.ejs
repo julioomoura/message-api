@@ -200,16 +200,17 @@
     };
 
     desrandomizeButton.onclick = async () => {
-      const input = document.querySelector("input[id='messageInput']").value;
+      const input = document.querySelector("input[id='messageInput']");
       const response = await fetch("http://localhost:3000/messages", {
         method: "POST",
         mode: "same-origin",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: input }),
+        body: JSON.stringify({ message: input.value }),
       }).then((response) => {
-        randomMessage.textContent = input;
+        randomMessage.textContent = input.value;
+        input.value = "";
       });
     };
 
