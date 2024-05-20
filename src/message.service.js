@@ -1,16 +1,16 @@
 export default class MessageService {
   #cacheClient;
-  #randomCommitApi;
+  #randomDadJokesAPI;
 
-  constructor({ cacheClient, randomCommitApi }) {
+  constructor({ cacheClient, randomDadJokesAPI }) {
     this.#cacheClient = cacheClient;
-    this.#randomCommitApi = randomCommitApi;
+    this.#randomDadJokesAPI = randomDadJokesAPI;
   }
 
   async getMessage() {
     return (
       (await this.#cacheClient.GET("message")) ??
-      (await this.#randomCommitApi.getRandomCommitMessage())
+      (await this.#randomDadJokesAPI.getRandomJoke())
     );
   }
 

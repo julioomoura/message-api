@@ -4,6 +4,7 @@ import MessageService from "./message.service.js";
 import RandomCommitAPI from "./random-commit.api.js";
 import { fastifyView } from "@fastify/view";
 import * as ejs from "ejs";
+import RandomDadJokesAPI from "./random-dad-jokes.api.js";
 
 const fastify = Fastify({
   logger: true,
@@ -17,8 +18,8 @@ fastify.register(fastifyView, {
 
 const redisClient = await createRedisClient();
 const cacheClient = new CacheClient(redisClient).getRedisClient();
-const randomCommitApi = new RandomCommitAPI();
-const messageService = new MessageService({ cacheClient, randomCommitApi });
+const randomDadJokesAPI = new RandomDadJokesAPI();
+const messageService = new MessageService({ cacheClient, randomDadJokesAPI });
 
 fastify.get("/", async function handler(_req, _reply) {
   return { hello: "world" };
