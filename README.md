@@ -27,3 +27,4 @@
 - [ ] UI
   - [x] Write a UI using templates
   - [ ] Split css, html and js files
+  - [ ] Implement loading feature
