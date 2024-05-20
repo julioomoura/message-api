@@ -2,9 +2,17 @@ import Fastify from "fastify";
 import { CacheClient, createRedisClient } from "./redis.js";
 import MessageService from "./message.service.js";
 import RandomCommitAPI from "./random-commit.api.js";
+import { fastifyView } from "@fastify/view";
+import * as ejs from "ejs";
 
 const fastify = Fastify({
   logger: true,
+});
+
+fastify.register(fastifyView, {
+  engine: {
+    ejs: ejs,
+  },
 });
 
 const redisClient = await createRedisClient();
@@ -31,6 +39,13 @@ fastify.post("/messages", async (req, reply) => {
 fastify.delete("/messages", async (_req, reply) => {
   messageService.flushCache();
   reply.code(204);
+});
+
+fastify.get("/ui/message", async (request, reply) => {
+  const message = await messageService.getMessage();
+  return reply.viewAsync("./src/ui/message.ejs", {
+    message,
+  });
 });
 
 try {
