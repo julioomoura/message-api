@@ -10,7 +10,7 @@
   - [x] env-file
 - [x] Use fastify as server
 - [ ] Move functions to classes
-- [ ] Find a API that provides random messages
+- [x] Find a API that provides random messages
   - [Random Commit API](https://whatthecommit.com/index.txt)
   - [Random Dad Jokes](https://icanhazdadjoke.com/)
 - [ ] Axios
