@@ -24,6 +24,7 @@
   - [ ] Find a alternative to redis cache
   - [ ] Cache resilience
 - [ ] Dockerize
+- [ ] Typescripting
 - [ ] UI
   - [x] Write a UI using templates
   - [ ] Split css, html and js files
