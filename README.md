@@ -16,8 +16,8 @@
 - [ ] Axios
   - [x] Use axios to fetch messages
   - [ ] Test Random Message class
-- [ ] Prettier
-  - [ ] Use prettier at test files
+- [x] Prettier
+  - [x] Use prettier at test files
 - [x] GitHub Actions
 - [ ] Cache
   - [x] Use docker compose to provide a redis-server
