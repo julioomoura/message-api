@@ -1,7 +1,6 @@
 import Fastify from "fastify";
 import { CacheClient, createRedisClient } from "./redis.js";
 import MessageService from "./message.service.js";
-import RandomCommitAPI from "./random-commit.api.js";
 import { fastifyView } from "@fastify/view";
 import * as ejs from "ejs";
 import RandomDadJokesAPI from "./random-dad-jokes.api.js";

@@ -3,7 +3,7 @@ import assert from "node:assert";
 import MessageService from "../src/message.service.js";
 
 describe("Message Service", () => {
-  const redisClient = {
+  const cacheClient = {
     GET: mock.fn(),
     SET: mock.fn(),
     DEL: mock.fn(),
@@ -11,7 +11,10 @@ describe("Message Service", () => {
   const randomDadJokesAPI = {
     getRandomJoke: mock.fn(),
   };
-  const service = new MessageService({ redisClient, randomDadJokesAPI });
+  const service = new MessageService({
+    cacheClient: cacheClient,
+    randomDadJokesAPI,
+  });
 
   afterEach(() => {
     mock.reset();
@@ -20,7 +23,7 @@ describe("Message Service", () => {
     it("should return message from cache when it is cached", async () => {
       const cachedMessage = "Hello, my friend";
 
-      mock.method(redisClient, "GET", async () =>
+      mock.method(cacheClient, "GET", async () =>
         Promise.resolve(cachedMessage),
       );
 
@@ -40,9 +43,9 @@ describe("Message Service", () => {
   describe("cacheMessage", () => {
     it("should cache the given message", async () => {
       const message = "message";
-      mock.method(redisClient, "DEL", async () => Promise.resolve());
+      mock.method(cacheClient, "DEL", async () => Promise.resolve());
       await service.cacheMessage(message);
-      assert.deepStrictEqual(redisClient.SET.mock.calls[0].arguments, [
+      assert.deepStrictEqual(cacheClient.SET.mock.calls[0].arguments, [
         "message",
         message,
         { EX: 60 },
@@ -53,7 +56,7 @@ describe("Message Service", () => {
   describe("flushCache", () => {
     it("should flush the cache", async () => {
       await service.flushCache();
-      assert.deepStrictEqual(redisClient.DEL.mock.callCount(), 0);
+      assert.deepStrictEqual(cacheClient.DEL.mock.callCount(), 1);
     });
   });
 });
