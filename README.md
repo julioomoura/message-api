@@ -18,7 +18,7 @@
   - [ ] Test Random Message class
 - [ ] Prettier
   - [ ] Use prettier at test files
-- [ ] GitHub Actions
+- [x] GitHub Actions
 - [ ] Cache
   - [x] Use docker compose to provide a redis-server
   - [ ] Find a alternative to redis cache
