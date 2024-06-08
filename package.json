@@ -8,10 +8,11 @@
   "description": "NodeJS APP that provides a message endpoint",
   "main": "index.js",
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "format": "prettier --write \"**/*.js\"",
     "lint": "eslint",
-    "start": "node --env-file=.env src/server.js",
-    "start:watch": "node --env-file=.env --watch-path=./src --watch src/server.js",
+    "start": "tsx --env-file=.env src/server.ts",
+    "start:watch": "tsx watch --env-file=.env src/server.ts",
     "test": "node --test",
     "test:coverage": "node --test --experimental-test-coverage",
     "test:watch": "node --test --watch"
@@ -20,15 +21,19 @@
   "author": "Júlio Moura",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.14.0",
     "eslint": "^8.56.0",
     "jest": "^29.7.0",
-    "prettier": "3.2.5"
+    "prettier": "3.2.5",
+    "tsx": "^4.14.0",
+    "typescript": "^5.4.5"
   },
   "dependencies": {
     "@fastify/view": "^9.1.0",
     "axios": "^1.6.8",
     "ejs": "^3.1.10",
     "fastify": "^4.26.2",
-    "redis": "^4.6.13"
+    "redis": "^4.6.13",
+    "zod": "^3.23.8"
   }
 }
