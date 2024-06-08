@@ -7,6 +7,7 @@
     - [ ] --watch
     - [x] add script to package.json
     - [x] coverage report
+    - [ ] translate to Typescript
   - [x] env-file
 - [x] Use fastify as server
 - [ ] Move functions to classes
@@ -24,7 +25,7 @@
   - [ ] Find a alternative to redis cache
   - [ ] Cache resilience
 - [ ] Dockerize
-- [ ] Typescripting
+- [x] Typescripting
 - [ ] UI
   - [x] Write a UI using templates
   - [ ] Split css, html and js files
