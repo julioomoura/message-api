@@ -1,4 +1,6 @@
 import Fastify from "fastify";
+import { fastifyView } from "@fastify/view";
+import ejs from "ejs";
 import { z } from "zod";
 import { CacheClient, createRedisClient } from "./redis.js";
 import RandomDadJokesAPI from "./random-dad-jokes.api.js";
@@ -11,6 +13,12 @@ const cacheClient = new CacheClient(redisClient).getRedisClient();
 const randomDadJokesAPI = new RandomDadJokesAPI();
 const messageService = new MessageService(cacheClient, randomDadJokesAPI);
 
+fastify.register(fastifyView, {
+  engine: {
+    ejs,
+  },
+});
+
 fastify.get("/", async (request, reply) => {
   return { hello: "world" };
 });
@@ -18,6 +26,13 @@ fastify.get("/", async (request, reply) => {
 fastify.get("/messages", async (request, reply) => {
   const message = await messageService.getMessage();
   reply.code(200).send({ message });
+});
+
+fastify.get("/ui/messages", async (request, reply) => {
+  const message = await messageService.getMessage();
+  return reply.viewAsync("./src/ui/message.ejs", {
+    message,
+  });
 });
 
 fastify.post("/messages", async (request, reply) => {
